@@ -38,8 +38,32 @@ import { CommonModule } from '@angular/common';
 })
 export class TopHeaderComponent {
   searchState: 'visible' | 'hidden' = 'hidden';
+  phoneNumber = '+34 434 343 434';
+  email = 'info@empresa.com';
+
+  isSearchOpen = false;
+  isMenuOpen = false;
+  isMobile = false;
+
+  constructor() {
+    // Detectar si es móvil
+    this.checkScreenSize();
+    window.addEventListener('resize', () => this.checkScreenSize());
+  }
 
   toggleSearch() {
-    this.searchState = this.searchState === 'hidden' ? 'visible' : 'hidden';
+    this.isSearchOpen = !this.isSearchOpen;
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  private checkScreenSize() {
+    this.isMobile = window.innerWidth < 960;
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('resize', () => this.checkScreenSize());
   }
 }

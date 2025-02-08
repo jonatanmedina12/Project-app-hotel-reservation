@@ -1,6 +1,9 @@
-/* header.component.css */
-
-.main-header {
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  height: 70px;
   position: fixed;
   top: 0;
   left: 0;
@@ -8,107 +11,21 @@
   z-index: 1000;
 }
 
-/* Top Header */
-.top-header {
-  background: linear-gradient(to right, #1976d2, #1565c0);
-  min-height: 48px;
-  padding: 0;
-}
-
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 16px;
-}
-
-/* Contact Info Section */
-.contact-info {
-  display: flex;
-  gap: 8px;
-}
-
-.contact-info .mat-button {
-  color: white;
-  height: 36px;
-  line-height: 36px;
-  border-radius: 28px;
-  transition: background-color 0.2s;
-}
-
-.contact-info .mat-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.contact-info .mat-icon {
-  font-size: 18px;
-  height: 18px;
-  width: 18px;
-  margin-right: 4px;
-}
-
-.contact-info span {
-  font-size: 14px;
-  font-weight: 400;
-}
-
-/* Auth Actions */
-.auth-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.language-selector .mat-button {
-  color: white;
-  height: 36px;
-  border-radius: 28px;
-  padding: 0 16px;
-}
-
-.language-selector .mat-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.auth-buttons {
-  display: flex;
-  gap: 8px;
-}
-
-.login-btn {
-  color: white;
-  height: 36px;
-  border-radius: 28px;
-  padding: 0 16px;
-}
-
-.register-btn {
-  background-color: white;
-  color: #1976d2;
-  height: 36px;
-  border-radius: 28px;
-  padding: 0 16px;
-  font-weight: 500;
-  transition: background-color 0.2s;
-}
-
-.register-btn:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-/* Main Navigation */
-.main-nav {
-  background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 64px;
-}
-
-.nav-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
   height: 100%;
-  padding: 0 16px;
+}
+
+/* Logo Animation */
+.logo {
+  transition: transform 0.3s ease;
+  animation: float 6s ease-in-out infinite;
 }
 
 .logo img {
@@ -116,107 +33,131 @@
   width: auto;
 }
 
-.nav-links {
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Contact Links with Neon Effect */
+.contact-info {
   display: flex;
-  gap: 8px;
+  gap: 16px;
 }
 
-.nav-links .mat-button {
-  height: 48px;
-  border-radius: 8px;
-  padding: 0 16px;
-  color: rgba(0, 0, 0, 0.87);
-  transition: all 0.2s;
+.neon-button {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+  transition: all 0.3s ease;
 }
 
-.nav-links .mat-button.active {
-  color: #1976d2;
-  background: rgba(25, 118, 210, 0.1);
-}
-
-.nav-links .mat-button:hover {
-  background: rgba(0, 0, 0, 0.04);
-}
-
-.nav-links .mat-icon {
-  margin-right: 8px;
-}
-
-/* Search and Actions */
-.nav-actions {
-  display: flex;
-  gap: 8px;
-}
-
-.nav-actions .mat-icon-button {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 50%;
-}
-
-.nav-actions .mat-icon-button:hover {
-  background: rgba(0, 0, 0, 0.04);
-}
-
-/* Search Bar */
-.search-bar {
+.neon-button::before {
+  content: '';
   position: absolute;
-  top: 112px;
+  top: 0;
   left: 0;
-  right: 0;
-  background: white;
-  padding: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform-origin: top;
-  transition: transform 0.3s ease-out;
+  width: 60px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-15deg) translateX(-100px);
+  transition: 0.5s;
 }
 
-.search-bar.hidden {
-  transform: translateY(-100%);
+.neon-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
-.search-field {
-  width: 100%;
+.neon-button:hover::before {
+  transform: skewX(-15deg) translateX(300px);
 }
 
-.search-field .mat-form-field-wrapper {
-  padding-bottom: 0;
+.neon-button .mat-icon {
+  font-size: 20px;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
 }
 
-/* Responsive adjustments */
-@media (max-width: 960px) {
+.neon-button:hover .mat-icon {
+  transform: scale(1.1);
+}
+
+/* Gradient Login Button */
+.gradient-btn {
+  background: linear-gradient(-45deg, #FF3366, #FF6B6B, #4ECDC4, #45B7D1);
+  background-size: 300% 300%;
+  animation: gradient 15s ease infinite;
+  border: none;
+  color: white;
+  padding: 0 25px;
+  height: 44px;
+  border-radius: 22px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.gradient-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .contact-info span {
     display: none;
   }
   
-  .nav-links span {
-    display: none;
+  .header-content {
+    padding: 0 16px;
   }
   
-  .auth-buttons span {
-    display: none;
+  .contact-info {
+    gap: 8px;
+  }
+  
+  .neon-button {
+    padding: 0 15px;
   }
 }
 
-/* Material Overrides */
-.mat-menu-panel.modern-menu {
-  border-radius: 16px;
-  margin-top: 8px;
+@media (max-width: 480px) {
+  .logo img {
+    height: 32px;
+  }
+  
+  .gradient-btn {
+    padding: 0 15px;
+  }
 }
 
-.mat-menu-item {
-  height: 40px;
-  line-height: 40px;
+/* Glassmorphism effect for the entire header on scroll */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 }
 
-.mat-form-field-appearance-outline .mat-form-field-outline {
-  background: white;
+/* Additional Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.mat-badge-content {
-  font-size: 10px;
-  height: 16px;
-  width: 16px;
-  line-height: 16px;
+.header-content > * {
+  animation: fadeIn 0.5s ease forwards;
 }
+
+.contact-info > *:nth-child(1) { animation-delay: 0.1s; }
+.contact-info > *:nth-child(2) { animation-delay: 0.2s; }
