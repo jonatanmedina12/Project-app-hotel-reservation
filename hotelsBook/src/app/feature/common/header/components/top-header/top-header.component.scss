@@ -1,0 +1,222 @@
+/* header.component.css */
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Top Header */
+.top-header {
+  background: linear-gradient(to right, #1976d2, #1565c0);
+  min-height: 48px;
+  padding: 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 16px;
+}
+
+/* Contact Info Section */
+.contact-info {
+  display: flex;
+  gap: 8px;
+}
+
+.contact-info .mat-button {
+  color: white;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 28px;
+  transition: background-color 0.2s;
+}
+
+.contact-info .mat-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-info .mat-icon {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+  margin-right: 4px;
+}
+
+.contact-info span {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Auth Actions */
+.auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.language-selector .mat-button {
+  color: white;
+  height: 36px;
+  border-radius: 28px;
+  padding: 0 16px;
+}
+
+.language-selector .mat-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.login-btn {
+  color: white;
+  height: 36px;
+  border-radius: 28px;
+  padding: 0 16px;
+}
+
+.register-btn {
+  background-color: white;
+  color: #1976d2;
+  height: 36px;
+  border-radius: 28px;
+  padding: 0 16px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.register-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Main Navigation */
+.main-nav {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 64px;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 16px;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-links .mat-button {
+  height: 48px;
+  border-radius: 8px;
+  padding: 0 16px;
+  color: rgba(0, 0, 0, 0.87);
+  transition: all 0.2s;
+}
+
+.nav-links .mat-button.active {
+  color: #1976d2;
+  background: rgba(25, 118, 210, 0.1);
+}
+
+.nav-links .mat-button:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.nav-links .mat-icon {
+  margin-right: 8px;
+}
+
+/* Search and Actions */
+.nav-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-actions .mat-icon-button {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+}
+
+.nav-actions .mat-icon-button:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* Search Bar */
+.search-bar {
+  position: absolute;
+  top: 112px;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform-origin: top;
+  transition: transform 0.3s ease-out;
+}
+
+.search-bar.hidden {
+  transform: translateY(-100%);
+}
+
+.search-field {
+  width: 100%;
+}
+
+.search-field .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+  .contact-info span {
+    display: none;
+  }
+  
+  .nav-links span {
+    display: none;
+  }
+  
+  .auth-buttons span {
+    display: none;
+  }
+}
+
+/* Material Overrides */
+.mat-menu-panel.modern-menu {
+  border-radius: 16px;
+  margin-top: 8px;
+}
+
+.mat-menu-item {
+  height: 40px;
+  line-height: 40px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  background: white;
+}
+
+.mat-badge-content {
+  font-size: 10px;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+}

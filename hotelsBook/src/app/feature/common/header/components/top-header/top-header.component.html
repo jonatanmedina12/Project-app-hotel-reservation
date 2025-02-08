@@ -1,0 +1,115 @@
+<header class="main-header">
+  <!-- Top Bar -->
+  <mat-toolbar class="top-header bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="header-content flex justify-between items-center py-2">
+        <!-- Left Side: Contact Info -->
+        <div class="contact-info flex space-x-4">
+          <a mat-button href="tel:+34434343434" class="contact-link hover:bg-blue-700 rounded-full transition-all">
+            <mat-icon class="text-lg">call</mat-icon>
+            <span class="ml-2 text-sm">+34 434 343 434</span>
+          </a>
+          <a mat-button href="mailto:info@empresa.com" class="contact-link hover:bg-blue-700 rounded-full transition-all">
+            <mat-icon class="text-lg">mail</mat-icon>
+            <span class="ml-2 text-sm">infoempresa.com</span>
+          </a>
+          <a mat-button class="location-link hover:bg-blue-700 rounded-full transition-all">
+            <mat-icon class="text-lg">location_on</mat-icon>
+            <span class="ml-2 text-sm">Encuentra tu hotel</span>
+          </a>
+        </div>
+
+        <!-- Right Side: Auth & Actions -->
+        <div class="auth-actions flex items-center space-x-4">
+          <div class="language-selector">
+            <button mat-button [matMenuTriggerFor]="languageMenu" class="hover:bg-blue-700 rounded-full transition-all">
+              <mat-icon class="text-lg">language</mat-icon>
+              <span class="mx-2 text-sm">ES</span>
+              <mat-icon class="text-sm">arrow_drop_down</mat-icon>
+            </button>
+            <mat-menu #languageMenu="matMenu" class="modern-menu">
+              <button mat-menu-item class="hover:bg-blue-50">Español</button>
+              <button mat-menu-item class="hover:bg-blue-50">English</button>
+              <button mat-menu-item class="hover:bg-blue-50">Français</button>
+            </mat-menu>
+          </div>
+          
+          <div class="auth-buttons flex space-x-2">
+            <a mat-button class="login-btn hover:bg-blue-700 rounded-full transition-all">
+              <mat-icon class="text-lg">person</mat-icon>
+              <span class="ml-2 text-sm">Iniciar Sesión</span>
+            </a>
+            <a mat-flat-button class="register-btn bg-white text-blue-600 hover:bg-blue-50 rounded-full transition-all">
+              <mat-icon class="text-lg">person_add</mat-icon>
+              <span class="ml-2 text-sm">Registrarse</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <!-- Main Navigation -->
+  <mat-toolbar class="main-nav bg-white shadow-md">
+    <div class="container mx-auto px-4">
+      <div class="nav-content flex justify-between items-center py-2">
+        <!-- Logo -->
+        <a class="logo" routerLink="/">
+          <img src="assets/logo.png" alt="Hotels Book Logo" class="h-12">
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links flex space-x-4">
+          <a mat-button routerLink="/hoteles" routerLinkActive="text-blue-600 font-medium" 
+             class="hover:bg-blue-50 rounded-lg transition-all">
+            <mat-icon class="text-lg">hotel</mat-icon>
+            <span class="ml-2">Hoteles</span>
+          </a>
+          <a mat-button routerLink="/ofertas" routerLinkActive="text-blue-600 font-medium"
+             class="hover:bg-blue-50 rounded-lg transition-all">
+            <mat-icon class="text-lg">local_offer</mat-icon>
+            <span class="ml-2">Ofertas</span>
+          </a>
+          <a mat-button routerLink="/destinos" routerLinkActive="text-blue-600 font-medium"
+             class="hover:bg-blue-50 rounded-lg transition-all">
+            <mat-icon class="text-lg">explore</mat-icon>
+            <span class="ml-2">Destinos</span>
+          </a>
+          <a mat-button routerLink="/experiencias" routerLinkActive="text-blue-600 font-medium"
+             class="hover:bg-blue-50 rounded-lg transition-all">
+            <mat-icon class="text-lg">star</mat-icon>
+            <span class="ml-2">Experiencias</span>
+          </a>
+        </nav>
+
+        <!-- Search & Actions -->
+        <div class="nav-actions flex items-center space-x-2">
+          <button mat-icon-button class="hover:bg-blue-50 rounded-full p-2 transition-all"
+                  (click)="toggleSearch()">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button mat-icon-button [matBadge]="'2'" matBadgeColor="warn"
+                  class="hover:bg-blue-50 rounded-full p-2 transition-all">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <!-- Search Bar -->
+  <div class="search-bar absolute w-full bg-white shadow-lg transform"
+       [@searchAnimation]="searchState">
+    <div class="container mx-auto px-4 py-4">
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-icon matPrefix class="text-gray-400">search</mat-icon>
+        <input matInput placeholder="Busca hoteles, destinos, experiencias..."
+               class="text-lg">
+        <button mat-icon-button matSuffix (click)="toggleSearch()"
+                class="hover:bg-gray-100 rounded-full transition-all">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+</header>
