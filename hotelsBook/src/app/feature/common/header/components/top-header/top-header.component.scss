@@ -1,0 +1,113 @@
+.header {
+  background-color: var(--background-darker);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  border-bottom: 1px solid var(--overlay-light);
+  backdrop-filter: blur(10px);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  color: var(--text-color);
+
+  .logo-icon {
+    color: var(--primary-color);
+    font-size: var(--font-size-xl);
+    height: var(--font-size-xl);
+    width: var(--font-size-xl);
+  }
+
+  .logo-text {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-lg);
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-normal);
+
+    mat-icon {
+      font-size: var(--font-size-lg);
+      height: var(--font-size-lg);
+      width: var(--font-size-lg);
+    }
+
+    &:hover {
+      color: var(--text-color);
+      background: var(--overlay-light);
+    }
+  }
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+
+  .btn-text {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-normal);
+
+    &:hover {
+      color: var(--text-color);
+      background: var(--overlay-light);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .action-buttons {
+    .btn-text {
+      display: none;
+    }
+  }
+}

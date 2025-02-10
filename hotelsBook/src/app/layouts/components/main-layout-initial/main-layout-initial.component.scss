@@ -1,0 +1,24 @@
+.layout-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-dark);
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sections-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--background-darker);
+}
+
+app-about-section,
+app-services-section {
+  width: 100%;
+}
