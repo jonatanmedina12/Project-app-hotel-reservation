@@ -1,0 +1,41 @@
+<main class="landing-container">
+  <section class="video-section">
+    <video
+      #videoPlayer
+      playsinline
+      [autoplay]="true"
+      [muted]="true"
+      [loop]="true"
+      class="feature-video"
+      preload="auto"
+    >
+      <source src="" type="video/mp4">
+    </video>
+  </section>
+
+  <section class="brands-section">
+    <div class="section-header">
+      <h2 class="section-title">Nuestras Tecnologías</h2>
+      <p class="section-subtitle">Descubre las herramientas que utilizamos para crear soluciones innovadoras</p>
+    </div>
+    
+    <div class="brands-track">
+      <div 
+        class="brands-container" 
+        [class.mobile]="isHandset$ | async"
+        *ngFor="let duplicate of duplicates; trackBy: trackByDuplicate"
+      >
+        <div 
+          *ngFor="let brand of brands; trackBy: trackByFn"
+          class="brand-item"
+          [matTooltip]="brand.description"
+          matTooltipPosition="above"
+          [matTooltipShowDelay]="500"
+        >
+          <mat-icon>{{brand.icon}}</mat-icon>
+          <span>{{brand.name}}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

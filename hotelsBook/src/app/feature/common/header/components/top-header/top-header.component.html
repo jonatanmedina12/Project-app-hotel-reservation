@@ -1,40 +1,44 @@
-<!-- header.component.html -->
 <mat-toolbar class="header">
-  <div class="header-content">
-    <!-- Logo con manejo de error -->
-    <a class="logo-wrapper">
-      <div class="logo-3d">
-        <!-- Opción 1: Usar una imagen temporal -->
-        <img src="https://via.placeholder.com/150x50" alt="Logo">
-        
-        <!-- Opción 2: Si tienes el logo, asegúrate que esté en assets -->
-        <!-- <img src="assets/img/logo.png" alt="Logo" 
-             onerror="this.src='https://via.placeholder.com/150x50'"> -->
-      </div>
-    </a>
+  <div class="container header-container">
+    <div class="logo-section">
+      <a class="logo hover-effect" routerLink="/">
+        <mat-icon class="logo-icon">code</mat-icon>
+        <span class="logo-text">TechCorp</span>
+      </a>
 
-    <!-- Contact Info con efectos 3D -->
-    <div class="contact-info">
-      <a mat-button href="tel:+34434343434" class="contact-link button-3d">
-        <div class="button-content">
-          <mat-icon>call</mat-icon>
-          <span>+34 434 343 434</span>
-        </div>
-      </a>
-      <a mat-button href="mailto:info@empresa.com" class="contact-link button-3d">
-        <div class="button-content">
-          <mat-icon>mail</mat-icon>
-          <span>info2empresa.com</span>
-        </div>
-      </a>
+      <nav class="nav-links">
+        <a class="nav-link hover-effect" routerLink="/docs">
+          <mat-icon>description</mat-icon>
+          <span>Docs</span>
+        </a>
+        <a class="nav-link hover-effect" routerLink="/pricing">
+          <mat-icon>payments</mat-icon>
+          <span>Pricing</span>
+        </a>
+        <a class="nav-link hover-effect" routerLink="/blog">
+          <mat-icon>article</mat-icon>
+          <span>Blog</span>
+        </a>
+        <a class="nav-link hover-effect" routerLink="/security">
+          <mat-icon>security</mat-icon>
+          <span>Security</span>
+        </a>
+      </nav>
     </div>
 
-    <!-- Login Button con efecto 3D -->
-    <button mat-raised-button class="login-btn button-3d-login">
-      <div class="button-face">
-        <mat-icon>person</mat-icon>
-        <span>Login</span>
-      </div>
-    </button>
+    <div class="action-buttons">
+      <a class="btn-text hover-effect" routerLink="/login">
+        <mat-icon>person_outline</mat-icon>
+        <span>Log in</span>
+      </a>
+      <a class="btn btn-primary hover-effect" routerLink="/signup">
+        <mat-icon>rocket_launch</mat-icon>
+        <span>Get started free</span>
+      </a>
+      <a class="btn btn-accent hover-effect" routerLink="/demo">
+        <mat-icon>play_circle</mat-icon>
+        <span>Book a demo</span>
+      </a>
+    </div>
   </div>
 </mat-toolbar>

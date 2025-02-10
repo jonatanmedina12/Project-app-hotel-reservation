@@ -12,8 +12,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          
-            "style": "scss"
+          "style": "scss"
         }
       },
       "root": "",
@@ -69,6 +68,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "allowedHosts": ["jonatanmedina.ngrok.dev"]
+          },
           "configurations": {
             "production": {
               "buildTarget": "hotelsBook:build:production"
